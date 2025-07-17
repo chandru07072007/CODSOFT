@@ -1,0 +1,192 @@
+.features {
+  background: #111;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature-box {
+  background: #222;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 300px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.feature-box:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-buttons a {
+  margin-left: 20px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login {
+  color: #fff;
+}
+
+.signup {
+  background: #fff;
+  color: #000;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero span {
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.cta-button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+.wave {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  background: linear-gradient(135deg, #ccc, #444);
+  opacity: 0.2;
+  animation: waveMove 10s infinite linear;
+  transform: rotate(-5deg);
+  border-radius: 50%;
+}
+
+.coin {
+  position: absolute;
+  width: 200px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.coin-bitcoin {
+  top: 20%;
+  right: 5%;
+}
+.coin-bitcoin{
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 100px;
+ 
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px #115eb6) drop-shadow(0 0 40px #0a73af);
+}
+.coin-usdc {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 100px;
+  z-index: 1;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 40px #ffff00);
+}
+.coin-r {
+  bottom: 20%;
+  right: 5%;
+}
+.coin-r{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 200px;
+ 
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px #cee407) drop-shadow(0 0 40px #b0d603);
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0) rotate(-5deg); }
+  100% { transform: translateX(-50%) rotate(-5deg); }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
