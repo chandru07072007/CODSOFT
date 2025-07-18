@@ -19,13 +19,11 @@
 
 <script>
   function handleSignup(e) {
-    e.preventDefault(); // Stops page from reloading
+    e.preventDefault();
+  
+    alert("Sign up successful! Redirecting to login page...");
 
-    // You can add validations or fake success here
-    alert("Sign up successful! Redirecting to home page...");
-
-    // Redirect to homepage or dashboard
-    window.location.href = "login.html"; // change to your home page file
+    window.location.href = "login.html"; 
   }
 </script>
 
