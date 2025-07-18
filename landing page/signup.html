@@ -9,13 +9,26 @@
 <body class="auth-page">
   <div class="auth-container">
     <h2>Create Your Account</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <button type="submit">Sign Up</button>
-      <p>Already have an account? <a href="login.html">Log in</a></p>
-    </form>
+      <form onsubmit="handleSignup(event)">
+  <input type="text" placeholder="Full Name" required />
+  <input type="email" placeholder="Email" required />
+  <input type="password" placeholder="Password" required />
+  <button type="submit">Sign Up</button>
+  <p>Already have an account? <a href="login.html">Log in</a></p>
+</form>
+
+<script>
+  function handleSignup(e) {
+    e.preventDefault(); // Stops page from reloading
+
+    // You can add validations or fake success here
+    alert("Sign up successful! Redirecting to home page...");
+
+    // Redirect to homepage or dashboard
+    window.location.href = "login.html"; // change to your home page file
+  }
+</script>
+
   </div>
 </body>
 </html>
