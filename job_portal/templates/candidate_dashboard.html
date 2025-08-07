@@ -1,0 +1,1 @@
+<h2>Candidate Dashboard</h2>
