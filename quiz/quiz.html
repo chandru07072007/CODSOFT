@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java OOPS Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <div class="quiz-box">
+    <div class="progress-bar">
+      <div id="progress"></div>
+    </div>
+    <div class="score-timer">
+      <span class="score">Score: <span id="score">0</span></span>
+      <span class="timer">Time: <span id="timer">15</span>s</span>
+    </div>
+    <div class="question-card fade-in" id="questionCard">
+      <div class="question-title" id="question-number">Question 1/10</div>
+      <pre class="question-text" id="question"></pre>
+      <div class="options" id="options"></div>
+      <button class="next-btn" id="nextBtn" disabled>Next</button>
+    </div>
+    <div class="result" id="resultSection">
+      <h2>Your Score: <span id="finalScore"></span>/10</h2>
+      <button class="restart-btn" id="restartBtn">Restart Quiz</button>
+    </div>
+  </div>
+  <script src="quiz.js"></script>
+</body>
+</html>
