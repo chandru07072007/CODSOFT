@@ -1,0 +1,17 @@
+<!-- templates/upload_resume.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Resume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/re.css') }}">
+</head>
+<body>
+    <h2>Upload Your Resume</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="resume">Select PDF Resume:</label><br>
+        <input type="file" name="resume" accept=".pdf" required><br><br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

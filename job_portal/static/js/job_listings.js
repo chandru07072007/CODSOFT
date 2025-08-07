@@ -1,1 +1,3 @@
-// JavaScript for job listings
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Job Listings page ready");
+});

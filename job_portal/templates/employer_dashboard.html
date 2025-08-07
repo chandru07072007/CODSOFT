@@ -1,1 +1,80 @@
-<h2>Employer Dashboard</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employer Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation (Optional) -->
+    <nav class="navbar">
+        <div class="logo">Job Portal</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/post_job">Post Job</a></li>
+            <li><a href="/view_applications">View Applications</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Heading -->
+    <div class="container">
+        <h1>Employer Dashboard</h1>
+        <p>Welcome, Employer! Manage your job postings and view candidate applications here.</p>
+
+        <!-- Section: Post a New Job -->
+        <section class="post-job-section">
+            <h2>Post a New Job</h2>
+            <a href="/post_job" class="button">Go to Job Posting</a>
+        </section>
+
+        <!-- Section: Current Job Listings -->
+        <section class="current-jobs">
+            <h2>Your Posted Jobs</h2>
+            {% if jobs %}
+                <ul class="job-list">
+                    {% for job in jobs %}
+                    <li class="job-card">
+                        <h3>{{ job.title }}</h3>
+                        <p><strong>Company:</strong> {{ job.company }}</p>
+                        <p><strong>Location:</strong> {{ job.location }}</p>
+                        <p><strong>Status:</strong> {{ 'Open' if job.is_open else 'Closed' }}</p>
+                        <a href="{{ url_for('view_applications', job_id=job.id) }}" class="button">View Applications</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No jobs posted yet.</p>
+            {% endif %}
+        </section>
+
+        <!-- Section: Applications -->
+        <section class="applications-section">
+            <h2>Recent Applications</h2>
+            {% if applications %}
+                <ul class="application-list">
+                    {% for app in applications %}
+                    <li class="application-card">
+                        <p><strong>Candidate:</strong> {{ app.candidate_name }}</p>
+                        <p><strong>Job Title:</strong> {{ app.job_title }}</p>
+                        <p><strong>Status:</strong> {{ app.status }}</p>
+                        <a href="{{ url_for('view_applications', job_id=app.job_id) }}" class="button">Review</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No applications yet.</p>
+            {% endif %}
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Job Portal. All rights reserved.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/employer_dashboard.js') }}"></script>
+</body>
+</html>

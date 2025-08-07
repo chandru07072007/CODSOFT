@@ -1,1 +1,51 @@
-<h1>Welcome to the Job Portal</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Portal - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   <!-- Navigation -->
+   <nav class="navbar">
+    <div class="logo">Job Portal</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="https://unstop.com/job-portal">Browse Jobs</a></li>
+
+        <li><a href="https://www.foundit.in/">Job Detail</a></li> <!-- Same as job listings -->
+        <li><a href="/login">Login</a></li>
+        <li><a href="/post_job">Post Job</a></li>
+        <li><a href="register">Register</a></li>
+        <li><a href="/upload_resume">Upload Resume</a></li>
+        <li><a href="/external_jobs">Admin</a></li>
+    </ul>
+</nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="animated-glow">Find Your Dream Job</h1>
+            <p>Connecting talented professionals with top companies.</p>
+            <form action="/jobs" method="get" class="search-bar">
+                <input type="text" name="search" placeholder="Search by title or company..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Job Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>css 

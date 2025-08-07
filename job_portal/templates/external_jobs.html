@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>External Job Listings</title>
+</head>
+<body>
+  <h1>External Jobs</h1>
+  {% if jobs %}
+    <ul>
+      {% for job in jobs %}
+        <li>
+          <a href="{{ job.url }}">{{ job.title }}</a>
+          — {{ job.company }} ({{ job.location }})
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No jobs found.</p>
+  {% endif %}
+  <a href="/">Back to Home</a>
+</body>
+</html>

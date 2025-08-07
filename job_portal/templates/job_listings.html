@@ -1,1 +1,115 @@
-<h2>Job Listings</h2>
+<!-- templates/job_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Available Jobs</h1>
+
+    <div class="job-container" id="jobContainer">
+        <!-- Jobs will be inserted here by JS -->
+    </div>
+
+    <script>
+        const jobs = [
+            {
+                id: 1,
+                title: "Software Engineer",
+                company: "Google",
+                location: "Bangalore",
+                salary: "₹15 LPA",
+                description: "Develop scalable backend systems."
+            },
+            {
+                id: 2,
+                title: "Frontend Developer",
+                company: "Amazon",
+                location: "Hyderabad",
+                salary: "₹12 LPA",
+                description: "Build responsive web interfaces."
+            },
+            {
+                id: 3,
+                title: "Data Analyst",
+                company: "Infosys",
+                location: "Chennai",
+                salary: "₹9 LPA",
+                description: "Analyze business data using Python and SQL."
+            },
+            {
+                id: 4,
+                title: "AI Engineer",
+                company: "TCS",
+                location: "Mumbai",
+                salary: "₹14 LPA",
+                description: "Work with machine learning models."
+            },
+            {
+                id: 5,
+                title: "UI/UX Designer",
+                company: "Adobe",
+                location: "Pune",
+                salary: "₹10 LPA",
+                description: "Design user-centric applications."
+            },
+            {
+                id: 6,
+                title: "Cloud Architect",
+                company: "Microsoft",
+                location: "Bangalore",
+                salary: "₹18 LPA",
+                description: "Design and deploy cloud infrastructure."
+            },
+            {
+                id: 7,
+                title: "Product Manager",
+                company: "Flipkart",
+                location: "Noida",
+                salary: "₹20 LPA",
+                description: "Define product roadmap and strategy."
+            },
+            {
+                id: 8,
+                title: "DevOps Engineer",
+                company: "Wipro",
+                location: "Delhi",
+                salary: "₹11 LPA",
+                description: "Automate CI/CD pipelines."
+            },
+            {
+                id: 9,
+                title: "Cybersecurity Analyst",
+                company: "Cognizant",
+                location: "Kolkata",
+                salary: "₹13 LPA",
+                description: "Monitor and prevent security threats."
+            },
+            {
+                id: 10,
+                title: "Mobile App Developer",
+                company: "Zoho",
+                location: "Chennai",
+                salary: "₹10 LPA",
+                description: "Develop Android and iOS apps."
+            }
+        ];
+
+        const container = document.getElementById('jobContainer');
+        jobs.forEach(job => {
+            container.innerHTML += `
+                <div class="job-card">
+                    <h2>${job.title}</h2>
+                    <p><strong>Company:</strong> ${job.company}</p>
+                    <p><strong>Location:</strong> ${job.location}</p>
+                    <p><strong>Salary:</strong> ${job.salary}</p>
+                    <p>${job.description}</p>
+                    <a href="/job/${job.id}">View Details</a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
