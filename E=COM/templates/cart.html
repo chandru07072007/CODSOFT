@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Your Cart</h1>
+{% if items %}
+<table class="cart-table">
+  <tr><th>Product</th><th>Qty</th><th>Subtotal</th></tr>
+  {% for it in items %}
+  <tr>
+    <td>{{ it.product.title }}</td>
+    <td>{{ it.qty }}</td>
+    <td>₹{{ '%.2f'|format(it.subtotal) }}</td>
+  </tr>
+  {% endfor %}
+  <tr><td colspan="2">Total</td><td>₹{{ '%.2f'|format(total) }}</td></tr>
+</table>
+{% else %}
+<p>Your cart is empty.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}E-Commerce{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <!-- Fixed logo link -->
+    <a href="{{ url_for('index') }}" class="logo">MyStore</a>
+
+    <!-- FIX: Changed search action to 'index' -->
+    <form action="{{ url_for('index') }}" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Search products..." value="{{ request.args.get('q', '') }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <nav>
+      <a href="{{ url_for('view_cart') }}">Cart</a>
+      {% if session.get('user') %}
+        <span class="user">{{ session.get('user') }}</span>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <main class="container">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for m in messages %}
+            <li>{{ m }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

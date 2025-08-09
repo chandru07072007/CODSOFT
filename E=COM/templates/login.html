@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <style>
+        /* Background Gradient Animation */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(270deg, #6a11cb, #2575fc, #ff512f, #dd2476);
+    background-size: 800% 800%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Login Box */
+.login-container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    width: 320px;
+    animation: fadeIn 1.2s ease;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* Labels */
+label {
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    box-shadow: 0 0 10px #fff;
+    transform: scale(1.02);
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #e52e71, #ff8a00);
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 136, 0, 0.6);
+}
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2>Login</h2>
+        <form id="loginForm" method="POST">
+            {{ form.hidden_tag() }}
+            
+            <label for="email">Email:</label>
+            {{ form.email(size=32) }}
+            
+            <label for="password">Password:</label>
+            {{ form.password(size=32) }}
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("loginForm");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // stop default form submit
+                window.location.href = "/"; // redirect to home page
+            });
+        });
+    </script>
+</body>
+</html>
