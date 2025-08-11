@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ project.name }}</h1>
+<p>{{ project.description }}</p>
+{% if file_links %}
+<h3>Uploaded Files</h3>
+<ul>
+    {% for file in file_links %}
+    <li><a href="{{ url_for('static', filename='../uploads/' ~ file) }}" target="_blank">{{ file }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+<h2>Tasks</h2>
+<form method="POST" action="{{ url_for('add_task', project_id=project.id) }}">
+    <input type="text" name="title" placeholder="Task Title" required>
+    <button type="submit">Add Task</button>
+</form>
+<ul id="task-list">
+    {% for task in project.tasks %}
+    <li data-task-id="{{ task.id }}">
+        <input type="checkbox" class="task-toggle" {% if task.is_done %}checked{% endif %}>
+        {{ task.title }}
+    </li>
+    {% endfor %}
+</ul>
+<script src="{{ url_for('static', filename='js/project_tasks.js') }}"></script>
+{% endblock %}

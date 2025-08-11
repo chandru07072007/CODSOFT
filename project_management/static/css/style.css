@@ -1,0 +1,132 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8fafc;
+    margin: 0;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 2em auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 2em 2.5em 2.5em 2.5em;
+}
+
+nav {
+    background: linear-gradient(90deg, #333 60%, #007BFF 100%);
+    padding: 1.2em 0.5em 1.2em 2em;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1.5em;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #ffd700;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #007BFF;
+    margin-top: 0.5em;
+}
+
+form {
+    margin: 2em 0 1.5em 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+}
+input, textarea, select, button {
+    padding: 0.7em 1em;
+    margin: 0.2em 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+input[type="text"], select {
+    min-width: 180px;
+}
+button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #0056b3;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0 0 0;
+}
+li {
+    background: #f4f8fb;
+    margin-bottom: 0.7em;
+    padding: 1em 1.2em;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+li.done {
+    text-decoration: line-through;
+    color: #aaa;
+    background: #e9ecef;
+}
+
+.filters {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+.filters a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.filters a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.login-form, .register-form {
+    max-width: 400px;
+    margin: 2em auto;
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.login-form input, .register-form input {
+    width: 100%;
+    margin-bottom: 1em;
+}
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+}
+.flashes li.success {
+    color: green;
+}
+.flashes li.danger {
+    color: red;
+}

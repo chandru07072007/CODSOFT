@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Projects</h1>
+<ul>
+    {% for project in projects %}
+    <li>
+        <a href="{{ url_for('project_detail', id=project.id) }}">{{ project.name }}</a>
+        <span style="color: #888; font-size: 0.95em;">({{ project.description }})</span>
+        <a href="{{ url_for('edit_project', id=project.id) }}" style="color:blue;">[Edit]</a>
+    </li>
+    {% else %}
+    <li>No projects found.</li>
+    {% endfor %}
+</ul>
+<form method="POST" action="{{ url_for('add_project') }}" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Project Name" required>
+    <input type="text" name="description" placeholder="Description">
+    <input type="file" name="project_files" webkitdirectory directory multiple>
+    <button type="submit">Add Project</button>
+</form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock %}

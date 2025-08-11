@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Project</h1>
+<form method="POST">
+    <input type="text" name="name" value="{{ project.name }}" required>
+    <textarea name="description">{{ project.description }}</textarea>
+    <button type="submit">Save Changes</button>
+    <a href="{{ url_for('projects') }}">Cancel</a>
+</form>
+{% endblock %}

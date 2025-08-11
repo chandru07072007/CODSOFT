@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Tasks</h1>
+
+<!-- Task Filter -->
+<div class="filters">
+    <a href="{{ url_for('tasks') }}">All</a> |
+    <a href="{{ url_for('tasks', status='pending') }}">Pending</a> |
+    <a href="{{ url_for('tasks', status='completed') }}">Completed</a>
+</div>
+
+<!-- Add Task Form -->
+<form method="POST" action="{{ url_for('add_task_global') }}">
+    <input type="text" name="title" placeholder="Task Title" required>
+    <select name="project_id" required>
+        <option value="">Select Project</option>
+        {% for project in projects %}
+        <option value="{{ project.id }}">{{ project.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Add Task</button>
+</form>
+
+<!-- Task List -->
+<ul id="all-task-list">
+    {% for task in tasks %}
+    <li class="{% if task.is_done %}done{% endif %}" data-task-id="{{ task.id }}">
+        <input type="checkbox" class="task-toggle" data-task-id="{{ task.id }}" {% if task.is_done %}checked{% endif %}>
+        {{ task.title }} (Project: {{ task.project.name }})
+        <a href="{{ url_for('delete_task', task_id=task.id) }}" style="color:red;">[Delete]</a>
+    </li>
+    {% endfor %}
+</ul>
+<script src="{{ url_for('static', filename='js/all_tasks.js') }}"></script>
+{% endblock %}
