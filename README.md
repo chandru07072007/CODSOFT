@@ -73,7 +73,7 @@ I successfully completed **all given tasks** from Level 1 to Level 3, demonstrat
 ---
 
 ## 📩 Contact
-📧 **Email:** contact@codsoft.in  
+📧 **Email:** chandrupalanisamyaids@gmail.com
 🌐 **Portfolio:** [GitHub Profile](https://github.com/chandru07072007)  
 🔗 **LinkedIn:** [Chandru P](https://linkedin.com/in/chandru-p)  
 
